@@ -96,7 +96,7 @@ main(void) {
 
 for wayland
 (NOTE:
-you must generate extra files first with
+you must generate extra files with
 ```
 wayland-scanner private-code  < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell.c
 wayland-scanner client-header < /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml > xdg-shell.h
