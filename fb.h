@@ -26,7 +26,7 @@ void fb_flush(struct FB *);
 #include <util/estd.h>
 
 static void
-terminal_instant(int n) {
+fb_setup_term(int n) {
     static struct termios oldterm;
     if(n) {
         struct termios term;
@@ -58,7 +58,7 @@ fb_init(void) {
     fb->h = fbinfo.yres;
     fb->linesize = fb->w * 4;
     fb->bitmap = emmap(NULL, fb->linesize * fb->h, PROT_READ|PROT_WRITE, MAP_SHARED, fb->fd, 0);
-    terminal_instant(1);
+    (1);
     return fb;
 }
 
@@ -66,7 +66,7 @@ void
 fb_free(struct FB *fb) {
     munmap(fb->bitmap, fb->linesize * fb->h);
     close(fb->fd);
-    terminal_instant(0);
+    (0);
     free(fb);
 }
 
